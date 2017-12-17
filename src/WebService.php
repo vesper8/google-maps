@@ -301,10 +301,10 @@ class WebService{
                         
             
             // Validate Endpoint
-            if(!array_key_exists('endpoint', config('googlemaps') )
-                    || !count(config('googlemaps.endpoint') < 1)){
+            if( ! (array_key_exists('endpoint', config('googlemaps') )
+                    && count(config('googlemaps.endpoint')) > 0 ) ) {
                 throw new \ErrorException('End point must not be empty.');
-            }              
+            }
                      
                     
     }
